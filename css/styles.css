@@ -57,6 +57,7 @@ nav {
 }
 nav h1 {
   margin: auto;
+  padding: 10px;
 }
 nav h1 a {
   color: #fff;
@@ -282,10 +283,31 @@ nav h1 a {
 /* Media query for Nexus 5 */
 @media screen and (max-width: 360px) {
 
+  #restaurants-list {
+    padding: 30px 15px 30px;
+    text-align: center;
+  }
+
+  #restaurants-list .restaurant-img {
+    margin: auto;
+    align-items: center;
+    max-width: 70%;
+    height: auto;
+    min-width: 250px;
+  }
 }
 
 /* Media query for iPad */
 @media screen and (min-width: 768px) {
+
+  nav h1 {
+    padding: 20px;
+  }
+
+  #restaurants-list {
+    padding: 30px 15px 30px;
+    text-align: center;
+  }
 
   #restaurants-list .restaurant-img {
     margin: auto;
@@ -295,9 +317,15 @@ nav h1 a {
     min-width: 270px;
 
   }
+
 }
 
 /* Media query for Desktop */
 @media screen and (min-width: 900px) {
+
+  #restaurants-list {
+    display: flex;
+    flex-direction: row;
+  }
 
 }
