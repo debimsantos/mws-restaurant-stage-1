@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Restaurant Reviews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css" type="text/css">
@@ -12,17 +11,17 @@
 </head>
 
 <body class="inside">
-  <header>
+  <header role="banner">
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1 role="navigation"><a href="/">Restaurant Reviews</a></h1>
     </nav>
-    <ul id="breadcrumb" >
+    <ul aria-label="breadcrumb"  id="breadcrumb" >
       <li><a href="/">Home</a></li>
     </ul>
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" role="application" aria-describedby="map">
       <div id="map"></div>
     </section>
 
@@ -30,8 +29,8 @@
       <h1 id="restaurant-name"></h1>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <p id="restaurant-address" aria-labelledby="restaurant-address"></p>
+      <table id="restaurant-hours" aria-labelledby="restaurant-hours"></table>
     </section>
 
     <section id="reviews-container">
@@ -39,7 +38,7 @@
     </section>
   </main>
 
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 
