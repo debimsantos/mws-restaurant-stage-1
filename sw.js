@@ -22,6 +22,7 @@
      '/img/8.jpg',
      '/img/9.jpg',
      '/img/10.jpg',
+     '/data/resturants.json'
 
  ];
 
@@ -47,4 +48,31 @@ self.addEventListener('install', function(e) {
  */
 self.addEventListener('activate', function(e) {
     console.log('ServiceWorker activated');
+});
+
+/**
+ * Fetch Cached Files
+ */
+self.addEventListener('fetch', function(e) {
+    console.log('ServiceWorker Fetching');
+    e.respondWith(
+        caches.match(e.request).then(function(response) {
+            if (response) {
+                console.log('Fetch response:', response);
+                return response;
+            }
+            console.log('No cache, will fetch from network');
+
+            return fetch(e.request).then(function(response) {
+                console.log('Response from network:', response);
+
+                return response;
+            }).catch(function(error) {
+                console.log('Fetching failed:', error);
+
+                throw error;
+            });
+
+        })
+    );
 });
