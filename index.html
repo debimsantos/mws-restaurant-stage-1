@@ -14,14 +14,15 @@
 <body>
   <header>
     <nav>
-      <h1><a tabindex="1" aria-label="Home" href="/">Restaurant Reviews</a></h1>
+      <h1 role="navigation"><a tabindex="1" aria-label="Home" href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" role="application" aria-describedby="map">
       <div id="map"></div>
     </section>
+
     <section>
       <div class="filter-options">
         <h2>Filter Results</h2>
