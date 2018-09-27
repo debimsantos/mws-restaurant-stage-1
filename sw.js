@@ -29,13 +29,13 @@
   * Install Service Worker
   */
 self.addEventListener('install', function(e) {
-    console.log('ServiceWorker installed');
+    //console.log('ServiceWorker installed');
 
     e.waitUntil(
         caches
         .open(versionName)
         .then(function(cache) {
-            console.log('ServiceWorker caching files');
+            //console.log('ServiceWorker caching files');
             cache.addAll(urlsToCache);
         })
         .then(skipWaiting)
@@ -46,28 +46,30 @@ self.addEventListener('install', function(e) {
  * Activate Service Worker
  */
 self.addEventListener('activate', function(e) {
-    console.log('ServiceWorker activated');
+    //console.log('ServiceWorker activated');
 });
 
 /**
- * Fetch Cached Files
+ * Fetch
  */
 self.addEventListener('fetch', function(e) {
-    console.log('ServiceWorker Fetching');
+    //console.log('ServiceWorker Fetching');
     e.respondWith(
-        caches.match(e.request).then(function(response) {
+        caches
+        .match(e.request)
+        .then(function(response) {
             if (response) {
-                console.log('Fetch response:', response);
+                //console.log('Fetch response:', response);
                 return response;
             }
-            console.log('No cache, will fetch from network');
+            //console.log('No cache, will fetch from network');
 
             return fetch(e.request).then(function(response) {
-                console.log('Response from network:', response);
+                //console.log('Response from network:', response);
 
                 return response;
             }).catch(function(error) {
-                console.log('Fetching failed:', error);
+                //console.log('Fetching failed:', error);
 
                 throw error;
             });
