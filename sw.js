@@ -1,6 +1,5 @@
 /**
  * Install Service Worker
- * Resource: https://blog.sessionstack.com/how-javascript-works-service-workers-their-life-cycle-and-use-cases-52b19ad98b58
  */
 
  const versionName = 'v1';
@@ -51,6 +50,7 @@ self.addEventListener('activate', function(e) {
 
 /**
  * Fetch
+ * Resource: https://blog.sessionstack.com/how-javascript-works-service-workers-their-life-cycle-and-use-cases-52b19ad98b58
  */
 self.addEventListener('fetch', function(e) {
     //console.log('ServiceWorker Fetching');

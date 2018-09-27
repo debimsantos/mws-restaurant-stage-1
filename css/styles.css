@@ -285,6 +285,8 @@ nav h1 a {
   padding: 0;
   list-style: none;
 }
+/* Resource: https://www.cssmatic.com/box-shadow
+for the box shadow with rounded corners */
 #reviews-container li {
   display: inline-block;
   text-align: left;
