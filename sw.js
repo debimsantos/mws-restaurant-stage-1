@@ -5,6 +5,7 @@
  const versionName = 'v1';
 
  const urlsToCache = [
+     '/',
      'index.html',
      'restaurant.html',
      '/css/styles.css',
